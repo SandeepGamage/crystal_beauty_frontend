@@ -12,7 +12,7 @@ function App() {
     
       <div>
 
-        <ProductCart/>
+        <ProductCart name="iphone16" price="3000$"/>
 
       </div>
     

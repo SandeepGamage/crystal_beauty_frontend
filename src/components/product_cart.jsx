@@ -1,9 +1,11 @@
-export default function ProductCart(){
+export default function ProductCart(props){
+
+    console.log(props.name)
 
     return (
-        <div>
-            <h1>Name</h1>
-            <h1>Price</h1>
+        <div className="h">
+            <h1>{props.name}</h1>
+            <h1>{props.price}</h1>
         </div>
     )
 
