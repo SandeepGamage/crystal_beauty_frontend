@@ -5,6 +5,8 @@ import './App.css'
 import ProductCart from './components/product_cart'
 import Header from './components/header'
 import LoginPage from './pages/loginPage'
+import AdminPage from './pages/adminPage'
+import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   
@@ -12,8 +14,19 @@ function App() {
     
     <>
 
- 
-    <LoginPage />
+    <BrowserRouter>
+    
+      <Routes path="/*">
+
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/admin" element={<AdminPage/>}/>
+        <Route path="/" element={<h6>Home Page</h6>}/>
+
+      </Routes>
+    
+    </BrowserRouter>
+
+    {/* <LoginPage /> */}
    
 
     {/* color box practice(positioning).
