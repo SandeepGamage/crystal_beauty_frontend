@@ -6,7 +6,9 @@ import ProductCart from './components/product_cart'
 import Header from './components/header'
 import LoginPage from './pages/loginPage'
 import AdminPage from './pages/adminPage'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Testing from './pages/testing'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   
@@ -15,18 +17,21 @@ function App() {
     <>
 
     <BrowserRouter>
+
+    <Toaster position='top-center'/>
     
       <Routes path="/*">
-
-        <Route path="/login" element={<LoginPage/>} />
-        <Route path="/admin" element={<AdminPage/>}/>
-        <Route path="/" element={<h6>Home Page</h6>}/>
-
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/admin/*" element={<AdminPage />} />
+        <Route path="/" element={<h4>Home Page</h4>} />
+        <Route path="/testing" element={<Testing />} />
+        <Route path="/*" element={<h5>404 Not Found</h5>} />
+        
       </Routes>
-    
+      
     </BrowserRouter>
 
-    {/* <LoginPage /> */}
+     {/* <LoginPage />  */}
    
 
     {/* color box practice(positioning).
@@ -40,7 +45,7 @@ function App() {
     </div> */}
     </>
 
-  )
+  );
 }
 
 export default App
